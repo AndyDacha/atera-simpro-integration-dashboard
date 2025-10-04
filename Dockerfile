@@ -17,7 +17,7 @@ COPY client/package*.json ./client/
 COPY . .
 
 # Install client dependencies
-RUN cd client && npm ci
+RUN cd client && npm install
 
 # Build the client
 RUN npm run build:client
