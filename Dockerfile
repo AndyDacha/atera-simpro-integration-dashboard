@@ -7,6 +7,11 @@ WORKDIR /app
 # Copy all files
 COPY . .
 
+# Debug: Check if files exist
+RUN ls -la client/
+RUN ls -la client/public/
+RUN cat client/public/index.html
+
 # Install server dependencies
 RUN npm ci --only=production
 
