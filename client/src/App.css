@@ -1,0 +1,54 @@
+/* Custom styles for the integration dashboard */
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
+
+/* Custom component styles */
+.flow-diagram {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+}
+
+.architecture-card {
+  background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+}
+
+.feature-card {
+  background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+}
+
+.security-card {
+  background: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%);
+}
+
+.checklist-item {
+  transition: all 0.3s ease;
+}
+
+.checklist-item:hover {
+  transform: translateX(5px);
+}
+
+/* Custom animations */
+@keyframes pulse-glow {
+  0%, 100% {
+    box-shadow: 0 0 5px rgba(59, 130, 246, 0.5);
+  }
+  50% {
+    box-shadow: 0 0 20px rgba(59, 130, 246, 0.8);
+  }
+}
+
+.pulse-glow {
+  animation: pulse-glow 2s infinite;
+}
+
+/* Responsive design improvements */
+@media (max-width: 768px) {
+  .flow-diagram {
+    font-size: 0.875rem;
+  }
+  
+  .architecture-card {
+    margin-bottom: 1rem;
+  }
+}
