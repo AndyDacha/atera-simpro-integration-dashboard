@@ -7,3 +7,4 @@ DEPLOYMENT.md
 env.example
 *.log
 .DS_Store
+client/build
