@@ -3,43 +3,174 @@
 @import 'tailwindcss/components';
 @import 'tailwindcss/utilities';
 
-/* Custom component styles */
+/* Dacha Brand Colors */
+:root {
+  --dacha-orange: #F7931E;
+  --dacha-grey: #808080;
+  --dacha-orange-light: #F9A94A;
+  --dacha-orange-dark: #E6820A;
+  --dacha-grey-light: #A0A0A0;
+  --dacha-grey-dark: #606060;
+}
+
+/* Custom component styles with Dacha branding */
 .flow-diagram {
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  background: linear-gradient(135deg, var(--dacha-orange) 0%, var(--dacha-orange-dark) 100%);
+  box-shadow: 0 10px 30px rgba(247, 147, 30, 0.3);
 }
 
 .architecture-card {
-  background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+  background: linear-gradient(135deg, var(--dacha-grey) 0%, var(--dacha-grey-dark) 100%);
+  box-shadow: 0 10px 30px rgba(128, 128, 128, 0.3);
 }
 
 .feature-card {
-  background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+  background: linear-gradient(135deg, var(--dacha-orange-light) 0%, var(--dacha-orange) 100%);
+  box-shadow: 0 10px 30px rgba(247, 147, 30, 0.2);
 }
 
 .security-card {
-  background: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%);
+  background: linear-gradient(135deg, var(--dacha-grey-light) 0%, var(--dacha-grey) 100%);
+  box-shadow: 0 10px 30px rgba(128, 128, 128, 0.2);
 }
 
 .checklist-item {
   transition: all 0.3s ease;
+  border-left: 4px solid var(--dacha-orange);
 }
 
 .checklist-item:hover {
   transform: translateX(5px);
+  background: linear-gradient(90deg, rgba(247, 147, 30, 0.1) 0%, transparent 100%);
 }
 
-/* Custom animations */
-@keyframes pulse-glow {
+/* Dacha Brand Header */
+.dacha-header {
+  background: linear-gradient(135deg, var(--dacha-orange) 0%, var(--dacha-orange-dark) 100%);
+  box-shadow: 0 4px 20px rgba(247, 147, 30, 0.3);
+}
+
+.dacha-sidebar {
+  background: linear-gradient(180deg, #1a1a1a 0%, #2d2d2d 100%);
+  border-right: 3px solid var(--dacha-orange);
+}
+
+.dacha-sidebar-item {
+  transition: all 0.3s ease;
+  border-left: 3px solid transparent;
+}
+
+.dacha-sidebar-item:hover {
+  background: linear-gradient(90deg, rgba(247, 147, 30, 0.1) 0%, transparent 100%);
+  border-left-color: var(--dacha-orange);
+}
+
+.dacha-sidebar-item.active {
+  background: linear-gradient(90deg, rgba(247, 147, 30, 0.2) 0%, transparent 100%);
+  border-left-color: var(--dacha-orange);
+  color: var(--dacha-orange);
+}
+
+/* Dacha Brand Cards */
+.dacha-card {
+  background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
+  border: 2px solid var(--dacha-orange);
+  box-shadow: 0 8px 25px rgba(247, 147, 30, 0.15);
+  transition: all 0.3s ease;
+}
+
+.dacha-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 35px rgba(247, 147, 30, 0.25);
+}
+
+/* Dacha Brand Buttons */
+.dacha-btn-primary {
+  background: linear-gradient(135deg, var(--dacha-orange) 0%, var(--dacha-orange-dark) 100%);
+  border: none;
+  box-shadow: 0 4px 15px rgba(247, 147, 30, 0.4);
+  transition: all 0.3s ease;
+}
+
+.dacha-btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(247, 147, 30, 0.6);
+}
+
+.dacha-btn-secondary {
+  background: linear-gradient(135deg, var(--dacha-grey) 0%, var(--dacha-grey-dark) 100%);
+  border: none;
+  box-shadow: 0 4px 15px rgba(128, 128, 128, 0.4);
+  transition: all 0.3s ease;
+}
+
+.dacha-btn-secondary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(128, 128, 128, 0.6);
+}
+
+/* Dacha Brand Status Indicators */
+.dacha-status-operational {
+  color: var(--dacha-orange);
+  font-weight: bold;
+}
+
+.dacha-status-pending {
+  color: var(--dacha-grey);
+  font-weight: bold;
+}
+
+/* Custom animations with Dacha colors */
+@keyframes dacha-pulse-glow {
   0%, 100% {
-    box-shadow: 0 0 5px rgba(59, 130, 246, 0.5);
+    box-shadow: 0 0 5px rgba(247, 147, 30, 0.5);
   }
   50% {
-    box-shadow: 0 0 20px rgba(59, 130, 246, 0.8);
+    box-shadow: 0 0 20px rgba(247, 147, 30, 0.8);
   }
 }
 
-.pulse-glow {
-  animation: pulse-glow 2s infinite;
+.dacha-pulse-glow {
+  animation: dacha-pulse-glow 2s infinite;
+}
+
+@keyframes dacha-slide-in {
+  from {
+    opacity: 0;
+    transform: translateX(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.dacha-slide-in {
+  animation: dacha-slide-in 0.6s ease-out;
+}
+
+/* Dacha Brand Typography */
+.dacha-title {
+  color: var(--dacha-orange);
+  font-weight: 800;
+  text-shadow: 0 2px 4px rgba(247, 147, 30, 0.3);
+}
+
+.dacha-subtitle {
+  color: var(--dacha-grey);
+  font-weight: 600;
+}
+
+/* Dacha Brand Progress Bars */
+.dacha-progress {
+  background: linear-gradient(90deg, var(--dacha-orange) 0%, var(--dacha-orange-light) 100%);
+  box-shadow: 0 2px 10px rgba(247, 147, 30, 0.3);
+}
+
+/* Dacha Brand Icons */
+.dacha-icon {
+  color: var(--dacha-orange);
+  filter: drop-shadow(0 2px 4px rgba(247, 147, 30, 0.3));
 }
 
 /* Responsive design improvements */
@@ -51,4 +182,35 @@
   .architecture-card {
     margin-bottom: 1rem;
   }
+  
+  .dacha-card {
+    margin-bottom: 1rem;
+  }
+}
+
+/* Dacha Brand Login Screen */
+.dacha-login-bg {
+  background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 50%, #1a1a1a 100%);
+  position: relative;
+}
+
+.dacha-login-bg::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: radial-gradient(circle at 20% 80%, rgba(247, 147, 30, 0.1) 0%, transparent 50%),
+              radial-gradient(circle at 80% 20%, rgba(128, 128, 128, 0.1) 0%, transparent 50%);
+  pointer-events: none;
+}
+
+/* Dacha Brand Footer */
+.dacha-footer {
+  background: linear-gradient(135deg, var(--dacha-grey) 0%, var(--dacha-grey-dark) 100%);
+  color: white;
+  text-align: center;
+  padding: 1rem;
+  margin-top: 2rem;
 }

@@ -53,30 +53,30 @@ const Dashboard = ({ onLogout }) => {
   ];
 
   const renderOverview = () => (
-    <div className="space-y-6">
-      <div className="bg-white rounded-lg shadow-lg p-6">
-        <h2 className="text-2xl font-bold text-gray-900 mb-4 flex items-center">
-          <Activity className="h-6 w-6 text-blue-600 mr-2" />
+    <div className="space-y-8">
+      <div className="dacha-card rounded-xl shadow-lg p-8">
+        <h2 className="dacha-title text-3xl font-bold mb-6 flex items-center">
+          <Activity className="h-8 w-8 dacha-icon mr-3" />
           Integration Overview
         </h2>
-        <p className="text-gray-600 mb-4">
+        <p className="dacha-subtitle text-lg mb-6">
           The Atera → simPRO V4 Integration is a comprehensive system that automatically synchronizes 
           service tickets from Atera's ticketing system to simPRO's job management platform, specifically 
-          designed for Veri Sae (PureGym) operations.
+          designed for Dacha SSI's Veri Sae (PureGym) operations.
         </p>
         
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mt-6">
-          <div className="bg-blue-50 p-4 rounded-lg">
-            <h3 className="font-semibold text-blue-900">Real-time Sync</h3>
-            <p className="text-sm text-blue-700">Webhook-driven ticket synchronization</p>
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-8">
+          <div className="feature-card p-6 rounded-xl">
+            <h3 className="font-bold text-white text-lg mb-2">Real-time Sync</h3>
+            <p className="text-orange-100 text-sm">Webhook-driven ticket synchronization</p>
           </div>
-          <div className="bg-green-50 p-4 rounded-lg">
-            <h3 className="font-semibold text-green-900">SLA Management</h3>
-            <p className="text-sm text-green-700">Automated due date calculations</p>
+          <div className="feature-card p-6 rounded-xl">
+            <h3 className="font-bold text-white text-lg mb-2">SLA Management</h3>
+            <p className="text-orange-100 text-sm">Automated due date calculations</p>
           </div>
-          <div className="bg-purple-50 p-4 rounded-lg">
-            <h3 className="font-semibold text-purple-900">Bidirectional</h3>
-            <p className="text-sm text-purple-700">Comments and updates sync both ways</p>
+          <div className="feature-card p-6 rounded-xl">
+            <h3 className="font-bold text-white text-lg mb-2">Bidirectional</h3>
+            <p className="text-orange-100 text-sm">Comments and updates sync both ways</p>
           </div>
         </div>
       </div>
@@ -569,43 +569,54 @@ const Dashboard = ({ onLogout }) => {
   };
 
   return (
-    <div className="min-h-screen bg-gray-50">
-      {/* Header */}
-      <header className="bg-white shadow-sm border-b">
+    <div className="min-h-screen bg-gradient-to-br from-gray-50 to-gray-100">
+      {/* Dacha Brand Header */}
+      <header className="dacha-header shadow-lg">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex justify-between items-center h-16">
-            <div className="flex items-center">
-              <Shield className="h-8 w-8 text-blue-600 mr-3" />
-              <h1 className="text-xl font-bold text-gray-900">
-                Atera → simPRO V4 Integration Dashboard
-              </h1>
+          <div className="flex justify-between items-center py-6">
+            <div className="flex items-center space-x-4">
+              <div className="h-12 w-12 dacha-card rounded-xl flex items-center justify-center dacha-pulse-glow">
+                <Shield className="h-7 w-7 dacha-icon" />
+              </div>
+              <div>
+                <h1 className="dacha-title text-2xl font-bold text-white">
+                  Atera → simPRO V4 Integration
+                </h1>
+                <p className="text-orange-100 text-sm font-medium">Dacha SSI Internal Dashboard</p>
+              </div>
             </div>
-            <button
-              onClick={onLogout}
-              className="flex items-center space-x-2 text-gray-600 hover:text-gray-900"
-            >
-              <LogOut className="h-5 w-5" />
-              <span>Logout</span>
-            </button>
+            <div className="flex items-center space-x-4">
+              <div className="hidden sm:flex items-center space-x-2 px-3 py-2 bg-white bg-opacity-20 rounded-lg">
+                <div className="w-2 h-2 bg-green-400 rounded-full animate-pulse"></div>
+                <span className="text-white text-sm font-medium">Live</span>
+              </div>
+              <button
+                onClick={onLogout}
+                className="dacha-btn-secondary flex items-center space-x-2 px-4 py-2 text-sm font-medium text-white rounded-lg hover:bg-opacity-90 focus:outline-none focus:ring-2 focus:ring-orange-300 transition duration-200"
+              >
+                <LogOut className="h-4 w-4" />
+                <span>Logout</span>
+              </button>
+            </div>
           </div>
         </div>
       </header>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
         <div className="flex flex-col lg:flex-row gap-8">
-          {/* Sidebar */}
+          {/* Dacha Brand Sidebar */}
           <div className="lg:w-64 flex-shrink-0">
-            <nav className="space-y-2">
+            <nav className="dacha-sidebar space-y-2 p-4 rounded-xl">
               {sections.map((section) => {
                 const Icon = section.icon;
                 return (
                   <button
                     key={section.id}
                     onClick={() => setActiveSection(section.id)}
-                    className={`w-full flex items-center space-x-3 px-4 py-3 rounded-lg text-left transition-colors ${
+                    className={`dacha-sidebar-item w-full flex items-center space-x-3 px-4 py-3 rounded-lg text-left transition-all duration-300 ${
                       activeSection === section.id
-                        ? 'bg-blue-100 text-blue-700 border border-blue-200'
-                        : 'text-gray-600 hover:bg-gray-100'
+                        ? 'active text-white'
+                        : 'text-gray-300 hover:text-white'
                     }`}
                   >
                     <Icon className="h-5 w-5" />
@@ -618,7 +629,9 @@ const Dashboard = ({ onLogout }) => {
 
           {/* Main Content */}
           <div className="flex-1">
-            {renderContent()}
+            <div className="dacha-slide-in">
+              {renderContent()}
+            </div>
           </div>
         </div>
       </div>
