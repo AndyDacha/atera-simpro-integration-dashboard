@@ -985,27 +985,98 @@ const Dashboard = ({ onLogout }) => {
           <p className="dacha-subtitle-white">Real-time visualization of ticket processing from Atera to simPRO</p>
         </div>
         <div className="c-suite-section">
-          <div className="bg-gray-900 rounded-lg p-8 text-center">
-            <div className="text-white text-lg mb-4">🎬 Interactive Animation Coming Soon</div>
-            <div className="text-gray-400 mb-6">
-              This section will show an animated flow of how a ticket moves through the system
+          <div className="bg-gray-900 rounded-lg p-8">
+            <div className="text-center mb-8">
+              <div className="text-white text-lg mb-2">🎬 Live Ticket Flow Animation</div>
+              <div className="text-gray-400 text-sm">Watch a ticket journey from Atera to simPRO</div>
             </div>
-            <div className="grid grid-cols-1 md:grid-cols-4 gap-4 text-sm">
-              <div className="bg-blue-600 p-4 rounded-lg">
-                <div className="font-bold">1. Atera Webhook</div>
-                <div className="text-blue-100">Ticket Created</div>
+            
+            {/* Animated Flow Diagram */}
+            <div className="relative">
+              {/* Flow Steps */}
+              <div className="flex flex-col md:flex-row items-center justify-between space-y-4 md:space-y-0 md:space-x-4">
+                
+                {/* Step 1: Atera Webhook */}
+                <div className="flow-step bg-blue-600 p-6 rounded-xl text-center min-w-[200px] animate-pulse-slow">
+                  <div className="text-2xl mb-2">📧</div>
+                  <div className="font-bold text-white mb-1">1. Atera Webhook</div>
+                  <div className="text-blue-100 text-sm">Ticket Created</div>
+                  <div className="text-blue-200 text-xs mt-2">Customer: Veri Sae</div>
+                </div>
+
+                {/* Arrow 1 */}
+                <div className="hidden md:block">
+                  <div className="flow-arrow animate-bounce-right">
+                    <ArrowRight className="h-8 w-8 text-orange-500" />
+                  </div>
+                </div>
+
+                {/* Step 2: Validation */}
+                <div className="flow-step bg-yellow-600 p-6 rounded-xl text-center min-w-[200px] animate-pulse-slow" style={{animationDelay: '1s'}}>
+                  <div className="text-2xl mb-2">🔍</div>
+                  <div className="font-bold text-white mb-1">2. Validation</div>
+                  <div className="text-yellow-100 text-sm">Duplicate Check</div>
+                  <div className="text-yellow-200 text-xs mt-2">PlanetScale DB</div>
+                </div>
+
+                {/* Arrow 2 */}
+                <div className="hidden md:block">
+                  <div className="flow-arrow animate-bounce-right" style={{animationDelay: '1s'}}>
+                    <ArrowRight className="h-8 w-8 text-orange-500" />
+                  </div>
+                </div>
+
+                {/* Step 3: simPRO API */}
+                <div className="flow-step bg-green-600 p-6 rounded-xl text-center min-w-[200px] animate-pulse-slow" style={{animationDelay: '2s'}}>
+                  <div className="text-2xl mb-2">⚡</div>
+                  <div className="font-bold text-white mb-1">3. simPRO API</div>
+                  <div className="text-green-100 text-sm">Job Creation</div>
+                  <div className="text-green-200 text-xs mt-2">SLA Calculated</div>
+                </div>
+
+                {/* Arrow 3 */}
+                <div className="hidden md:block">
+                  <div className="flow-arrow animate-bounce-right" style={{animationDelay: '2s'}}>
+                    <ArrowRight className="h-8 w-8 text-orange-500" />
+                  </div>
+                </div>
+
+                {/* Step 4: Sync Complete */}
+                <div className="flow-step bg-purple-600 p-6 rounded-xl text-center min-w-[200px] animate-pulse-slow" style={{animationDelay: '3s'}}>
+                  <div className="text-2xl mb-2">🔄</div>
+                  <div className="font-bold text-white mb-1">4. Sync Complete</div>
+                  <div className="text-purple-100 text-sm">Bidirectional Updates</div>
+                  <div className="text-purple-200 text-xs mt-2">Comments Sync</div>
+                </div>
               </div>
-              <div className="bg-yellow-600 p-4 rounded-lg">
-                <div className="font-bold">2. Validation</div>
-                <div className="text-yellow-100">Duplicate Check</div>
+
+              {/* Mobile Arrows */}
+              <div className="md:hidden flex justify-center space-y-2 flex-col items-center mt-4">
+                <div className="flow-arrow animate-bounce-down">
+                  <ArrowRight className="h-6 w-6 text-orange-500 rotate-90" />
+                </div>
+                <div className="flow-arrow animate-bounce-down" style={{animationDelay: '1s'}}>
+                  <ArrowRight className="h-6 w-6 text-orange-500 rotate-90" />
+                </div>
+                <div className="flow-arrow animate-bounce-down" style={{animationDelay: '2s'}}>
+                  <ArrowRight className="h-6 w-6 text-orange-500 rotate-90" />
+                </div>
               </div>
-              <div className="bg-green-600 p-4 rounded-lg">
-                <div className="font-bold">3. simPRO API</div>
-                <div className="text-green-100">Job Creation</div>
-              </div>
-              <div className="bg-purple-600 p-4 rounded-lg">
-                <div className="font-bold">4. Sync Complete</div>
-                <div className="text-purple-100">Bidirectional Updates</div>
+
+              {/* Data Flow Indicators */}
+              <div className="mt-8 grid grid-cols-1 md:grid-cols-3 gap-4 text-center">
+                <div className="bg-gray-800 p-4 rounded-lg">
+                  <div className="text-orange-400 font-bold">Webhook Data</div>
+                  <div className="text-gray-300 text-sm">Ticket ID, Priority, Customer</div>
+                </div>
+                <div className="bg-gray-800 p-4 rounded-lg">
+                  <div className="text-orange-400 font-bold">API Calls</div>
+                  <div className="text-gray-300 text-sm">simPRO Job Creation, Updates</div>
+                </div>
+                <div className="bg-gray-800 p-4 rounded-lg">
+                  <div className="text-orange-400 font-bold">Sync Status</div>
+                  <div className="text-gray-300 text-sm">Real-time Bidirectional</div>
+                </div>
               </div>
             </div>
           </div>

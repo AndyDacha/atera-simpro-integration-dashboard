@@ -167,11 +167,63 @@
   font-weight: 600;
 }
 
-.dacha-subtitle-white {
-  color: white;
-  font-weight: 600;
-  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
-}
+  .dacha-subtitle-white {
+    color: white;
+    font-weight: 600;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+  }
+
+  /* Flow Animation Styles */
+  .flow-step {
+    transition: all 0.3s ease;
+    transform: scale(1);
+  }
+
+  .flow-step:hover {
+    transform: scale(1.05);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+  }
+
+  .animate-pulse-slow {
+    animation: pulse-slow 3s ease-in-out infinite;
+  }
+
+  .animate-bounce-right {
+    animation: bounce-right 2s ease-in-out infinite;
+  }
+
+  .animate-bounce-down {
+    animation: bounce-down 2s ease-in-out infinite;
+  }
+
+  @keyframes pulse-slow {
+    0%, 100% {
+      opacity: 1;
+      transform: scale(1);
+    }
+    50% {
+      opacity: 0.8;
+      transform: scale(1.02);
+    }
+  }
+
+  @keyframes bounce-right {
+    0%, 100% {
+      transform: translateX(0);
+    }
+    50% {
+      transform: translateX(10px);
+    }
+  }
+
+  @keyframes bounce-down {
+    0%, 100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(10px);
+    }
+  }
 
 /* Dacha Brand Progress Bars */
 .dacha-progress {
