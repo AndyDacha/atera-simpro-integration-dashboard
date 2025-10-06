@@ -11,6 +11,34 @@
   --dacha-orange-dark: #E6820A;
   --dacha-grey-light: #A0A0A0;
   --dacha-grey-dark: #606060;
+  
+  /* Modern color palette */
+  --surface-light: #f7f7f8;
+  --surface-dark: #0b0d10;
+  --text-primary: #0f172a;
+  --text-secondary: #64748b;
+  --text-muted: #94a3b8;
+  --border-light: #e2e8f0;
+  --border-dark: #334155;
+}
+
+/* Modern Typography */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+
+body {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', sans-serif;
+  font-feature-settings: 'cv02', 'cv03', 'cv04', 'cv11';
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Modern spacing scale */
+.space-y-6 > * + * {
+  margin-top: 1.5rem;
+}
+
+.space-y-8 > * + * {
+  margin-top: 2rem;
 }
 
 /* Custom component styles with Dacha branding */

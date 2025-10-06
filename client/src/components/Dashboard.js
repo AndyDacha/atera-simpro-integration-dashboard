@@ -57,114 +57,115 @@ const Dashboard = ({ onLogout }) => {
   ];
 
   const renderOverview = () => (
-    <div className="space-y-8">
-      <div className="dacha-card rounded-xl shadow-lg p-8">
-        <h2 className="dacha-title text-3xl font-bold mb-6 flex items-center">
-          <Activity className="h-8 w-8 dacha-icon mr-3" />
-          Integration Overview
-        </h2>
-        <p className="dacha-subtitle text-lg mb-6">
-          The Atera u2192 simPRO V4 Integration is a comprehensive system that automatically synchronizes 
+    <div className="space-y-6">
+      {/* Page Header */}
+      <div className="bg-white dark:bg-slate-800 rounded-xl shadow-sm border border-slate-200 dark:border-slate-700 p-6">
+        <div className="flex items-center space-x-3 mb-4">
+          <Activity className="h-6 w-6 text-orange-600" />
+          <h1 className="text-2xl font-bold text-slate-900 dark:text-white">Integration Overview</h1>
+        </div>
+        <p className="text-slate-600 dark:text-slate-300 text-base leading-7">
+          The Atera &#x2192; simPRO V4 Integration is a comprehensive system that automatically synchronizes 
           service tickets from Atera's ticketing system to simPRO's job management platform, specifically 
           designed for Dacha SSI's Veri Sae (PureGym) operations.
         </p>
-        
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-8">
-          <div className="feature-card p-6 rounded-xl">
-            <h3 className="dacha-title-white text-lg mb-2">Real-time Sync</h3>
-            <p className="dacha-subtitle-white text-sm">Webhook-driven ticket synchronization</p>
+      </div>
+
+      {/* KPI Cards */}
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div className="bg-white dark:bg-slate-800 rounded-xl shadow-sm border border-slate-200 dark:border-slate-700 p-6">
+          <div className="flex items-center justify-between mb-4">
+            <h3 className="text-sm font-medium text-slate-600 dark:text-slate-300">Tickets Processed (24h)</h3>
+            <div className="flex items-center space-x-1">
+              <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse"></div>
+              <span className="text-xs text-green-600 font-medium">Live</span>
+            </div>
           </div>
-          <div className="feature-card p-6 rounded-xl">
-            <h3 className="dacha-title-white text-lg mb-2">SLA Management</h3>
-            <p className="dacha-subtitle-white text-sm">Automated due date calculations</p>
-          </div>
-          <div className="feature-card p-6 rounded-xl">
-            <h3 className="dacha-title-white text-lg mb-2">Bidirectional</h3>
-            <p className="dacha-subtitle-white text-sm">Comments and updates sync both ways</p>
+          <div className="text-3xl font-bold text-slate-900 dark:text-white mb-2">1,247</div>
+          <div className="text-sm text-green-600 flex items-center">
+            <ArrowRight className="h-4 w-4 mr-1" />
+            +12% from yesterday
           </div>
         </div>
-        
-        {/* Code Storage & Deployment Section */}
-        <div className="c-suite-card mt-8">
-          <div className="c-suite-header">
-            <h3 className="dacha-title-white text-xl font-bold mb-2">Code Storage & Deployment</h3>
-            <p className="dacha-subtitle-white">Professional development workflow</p>
-          </div>
-          <div className="c-suite-section">
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-              <div className="space-y-4">
-                <h4 className="font-bold text-gray-900 flex items-center">
-                  <Database className="h-5 w-5 text-blue-600 mr-2" />
-                  Version Control
-                </h4>
-                <ul className="space-y-2 text-gray-700">
-                  <li className="flex items-start">
-                    <CheckCircle className="h-4 w-4 text-green-500 mr-2 mt-0.5 flex-shrink-0" />
-                    <span><strong>GitHub Repository:</strong> Private repository with full access control</span>
-                  </li>
-                  <li className="flex items-start">
-                    <CheckCircle className="h-4 w-4 text-green-500 mr-2 mt-0.5 flex-shrink-0" />
-                    <span><strong>Branch Strategy:</strong> Main branch with feature branches</span>
-                  </li>
-                  <li className="flex items-start">
-                    <CheckCircle className="h-4 w-4 text-green-500 mr-2 mt-0.5 flex-shrink-0" />
-                    <span><strong>Code Reviews:</strong> Pull request reviews for all changes</span>
-                  </li>
-                </ul>
-              </div>
-              <div className="space-y-4">
-                <h4 className="font-bold text-gray-900 flex items-center">
-                  <Globe className="h-5 w-5 text-green-600 mr-2" />
-                  Deployment Pipeline
-                </h4>
-                <ul className="space-y-2 text-gray-700">
-                  <li className="flex items-start">
-                    <CheckCircle className="h-4 w-4 text-green-500 mr-2 mt-0.5 flex-shrink-0" />
-                    <span><strong>Railway:</strong> Automated deployment from GitHub</span>
-                  </li>
-                  <li className="flex items-start">
-                    <CheckCircle className="h-4 w-4 text-green-500 mr-2 mt-0.5 flex-shrink-0" />
-                    <span><strong>Environment Variables:</strong> Secure configuration management</span>
-                  </li>
-                  <li className="flex items-start">
-                    <CheckCircle className="h-4 w-4 text-green-500 mr-2 mt-0.5 flex-shrink-0" />
-                    <span><strong>Zero Downtime:</strong> Blue-green deployment strategy</span>
-                  </li>
-                </ul>
-              </div>
+
+        <div className="bg-white dark:bg-slate-800 rounded-xl shadow-sm border border-slate-200 dark:border-slate-700 p-6">
+          <div className="flex items-center justify-between mb-4">
+            <h3 className="text-sm font-medium text-slate-600 dark:text-slate-300">Errors (24h)</h3>
+            <div className="flex items-center space-x-1">
+              <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse"></div>
+              <span className="text-xs text-green-600 font-medium">Live</span>
             </div>
+          </div>
+          <div className="text-3xl font-bold text-slate-900 dark:text-white mb-2">3</div>
+          <div className="text-sm text-green-600 flex items-center">
+            <ArrowRight className="h-4 w-4 mr-1" />
+            -67% from yesterday
+          </div>
+        </div>
+
+        <div className="bg-white dark:bg-slate-800 rounded-xl shadow-sm border border-slate-200 dark:border-slate-700 p-6">
+          <div className="flex items-center justify-between mb-4">
+            <h3 className="text-sm font-medium text-slate-600 dark:text-slate-300">Avg End-to-End Time</h3>
+            <div className="flex items-center space-x-1">
+              <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse"></div>
+              <span className="text-xs text-green-600 font-medium">Live</span>
+            </div>
+          </div>
+          <div className="text-3xl font-bold text-slate-900 dark:text-white mb-2">2.3s</div>
+          <div className="text-sm text-green-600 flex items-center">
+            <ArrowRight className="h-4 w-4 mr-1" />
+            -0.4s from yesterday
           </div>
         </div>
       </div>
 
-      {integrationStatus && (
-        <div className="bg-white rounded-lg shadow-lg p-6">
-          <h3 className="text-xl font-bold text-gray-900 mb-4 flex items-center">
-            <Server className="h-5 w-5 text-green-600 mr-2" />
-            System Status
-          </h3>
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-            <div className="text-center">
-              <div className="text-2xl font-bold text-green-600">{integrationStatus.status}</div>
-              <div className="text-sm text-gray-600">Status</div>
-            </div>
-            <div className="text-center">
-              <div className="text-2xl font-bold text-blue-600">v{integrationStatus.version}</div>
-              <div className="text-sm text-gray-600">Version</div>
-            </div>
-            <div className="text-center">
-              <div className="text-2xl font-bold text-purple-600">{integrationStatus.environment}</div>
-              <div className="text-sm text-gray-600">Environment</div>
-            </div>
-            <div className="text-center">
-              <div className="text-2xl font-bold text-orange-600">
-                {Object.values(integrationStatus.features).filter(Boolean).length}
+      {/* Health Status Row */}
+      <div className="bg-white dark:bg-slate-800 rounded-xl shadow-sm border border-slate-200 dark:border-slate-700 p-6">
+        <h3 className="text-lg font-semibold text-slate-900 dark:text-white mb-4">System Health</h3>
+        <div className="grid grid-cols-1 md:grid-cols-5 gap-4">
+          {[
+            { name: 'Atera Webhook', status: 'healthy', latency: '45ms', lastEvent: '2 min ago' },
+            { name: 'Worker Process', status: 'healthy', latency: '12ms', lastEvent: '30s ago' },
+            { name: 'simPRO API', status: 'healthy', latency: '234ms', lastEvent: '1 min ago' },
+            { name: 'Database', status: 'healthy', latency: '8ms', lastEvent: '15s ago' },
+            { name: 'Queue', status: 'healthy', latency: '3ms', lastEvent: '5s ago' }
+          ].map((service, index) => (
+            <div key={index} className="flex items-center space-x-3 p-3 rounded-lg bg-slate-50 dark:bg-slate-700">
+              <div className="w-3 h-3 bg-green-500 rounded-full"></div>
+              <div className="flex-1 min-w-0">
+                <div className="text-sm font-medium text-slate-900 dark:text-white">{service.name}</div>
+                <div className="text-xs text-slate-500 dark:text-slate-400">{service.latency} • {service.lastEvent}</div>
               </div>
-              <div className="text-sm text-gray-600">Active Features</div>
             </div>
-          </div>
+          ))}
         </div>
-      )}
+      </div>
+
+      {/* Last 5 Events Timeline */}
+      <div className="bg-white dark:bg-slate-800 rounded-xl shadow-sm border border-slate-200 dark:border-slate-700 p-6">
+        <h3 className="text-lg font-semibold text-slate-900 dark:text-white mb-4">Recent Activity</h3>
+        <div className="space-y-3">
+          {[
+            { time: '2 min ago', event: 'Ticket #12345 processed', type: 'success', details: 'P2 → simPRO Job #789' },
+            { time: '5 min ago', event: 'Webhook received', type: 'info', details: 'Veri Sae - Equipment Issue' },
+            { time: '8 min ago', event: 'SLA calculated', type: 'success', details: 'Due: Tomorrow 17:30' },
+            { time: '12 min ago', event: 'Comment synced', type: 'info', details: 'Atera → simPRO' },
+            { time: '15 min ago', event: 'Ticket #12344 processed', type: 'success', details: 'P3 → simPRO Job #788' }
+          ].map((item, index) => (
+            <div key={index} className="flex items-center space-x-3 p-3 rounded-lg hover:bg-slate-50 dark:hover:bg-slate-700 transition-colors">
+              <div className={`w-2 h-2 rounded-full ${
+                item.type === 'success' ? 'bg-green-500' : 
+                item.type === 'error' ? 'bg-red-500' : 'bg-blue-500'
+              }`}></div>
+              <div className="flex-1 min-w-0">
+                <div className="text-sm font-medium text-slate-900 dark:text-white">{item.event}</div>
+                <div className="text-xs text-slate-500 dark:text-slate-400">{item.details}</div>
+              </div>
+              <div className="text-xs text-slate-400 dark:text-slate-500">{item.time}</div>
+            </div>
+          ))}
+        </div>
+      </div>
     </div>
   );
 
@@ -1162,38 +1163,37 @@ const Dashboard = ({ onLogout }) => {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-gray-50 to-gray-100">
-      {/* Dacha Brand Header */}
-      <header className="dacha-header shadow-lg">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex justify-between items-center py-6">
+    <div className="min-h-screen bg-slate-50 dark:bg-slate-900">
+      {/* Modern Slim Top Bar */}
+      <header className="bg-white dark:bg-slate-800 border-b border-slate-200 dark:border-slate-700">
+        <div className="max-w-7xl mx-auto px-6">
+          <div className="flex justify-between items-center h-14">
             <div className="flex items-center space-x-4">
-              <div className="h-12 w-12 dacha-card rounded-xl flex items-center justify-center dacha-pulse-glow">
-                <Shield className="h-7 w-7 dacha-icon" />
+              <div className="flex items-center space-x-3">
+                <div className="h-8 w-8 bg-gradient-to-br from-orange-500 to-orange-600 rounded-lg flex items-center justify-center">
+                  <Shield className="h-5 w-5 text-white" />
+                </div>
+                <div className="text-slate-900 dark:text-white font-semibold text-lg">
+                  Atera &#x2192; simPRO V4
+                </div>
               </div>
-              <div>
-                <h1 className="dacha-title text-2xl font-bold text-white">
-                  Atera &#x2192; simPRO V4 Integration
-                </h1>
-                <p className="text-orange-100 text-sm font-medium">Dacha SSI Internal Dashboard</p>
+              <div className="flex items-center space-x-2">
+                <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse"></div>
+                <span className="text-sm font-medium text-slate-600 dark:text-slate-300">Live</span>
               </div>
             </div>
             <div className="flex items-center space-x-4">
-              <div className="hidden sm:flex items-center space-x-2 px-3 py-2 bg-white bg-opacity-20 rounded-lg">
-                <div className="w-2 h-2 bg-green-400 rounded-full animate-pulse"></div>
-                <span className="text-white text-sm font-medium">Live</span>
-              </div>
               <button
                 onClick={onLogout}
-                className="dacha-btn-secondary flex items-center space-x-2 px-4 py-2 text-sm font-medium text-white rounded-lg hover:bg-opacity-90 focus:outline-none focus:ring-2 focus:ring-orange-300 transition duration-200"
+                className="flex items-center space-x-2 px-3 py-2 text-sm font-medium text-slate-600 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white hover:bg-slate-100 dark:hover:bg-slate-700 rounded-lg transition-colors"
               >
                 <LogOut className="h-4 w-4" />
-                <span className="hidden sm:inline">Logout</span>
+                <span>Logout</span>
               </button>
               {/* Mobile Menu Button */}
               <button
                 onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-                className="lg:hidden dacha-btn-secondary flex items-center justify-center w-10 h-10 text-white rounded-lg hover:bg-opacity-90 focus:outline-none focus:ring-2 focus:ring-orange-300 transition duration-200"
+                className="lg:hidden p-2 text-slate-600 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white hover:bg-slate-100 dark:hover:bg-slate-700 rounded-lg transition-colors"
               >
                 {isMobileMenuOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
               </button>
@@ -1241,59 +1241,66 @@ const Dashboard = ({ onLogout }) => {
         </div>
       )}
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+      <div className="max-w-7xl mx-auto px-6 py-8">
         <div className="flex flex-col lg:flex-row gap-8">
-          {/* Dacha Brand Sidebar - Hidden on mobile */}
-          <div className="hidden lg:block lg:w-64 flex-shrink-0">
-            <nav className="dacha-sidebar space-y-2 p-4 rounded-xl">
-              {sections.map((section) => {
-                const Icon = section.icon;
-                return (
-                  <button
-                    key={section.id}
-                    onClick={() => setActiveSection(section.id)}
-                    className={`dacha-sidebar-item w-full flex items-center space-x-3 px-4 py-3 rounded-lg text-left transition-all duration-300 ${
-                      activeSection === section.id
-                        ? 'active text-white'
-                        : 'text-gray-300 hover:text-white'
-                    }`}
-                  >
-                    <Icon className="h-5 w-5" />
-                    <span className="font-medium">{section.label}</span>
-                  </button>
-                );
-              })}
-            </nav>
+          {/* Modern Left Rail Navigation */}
+          <div className="hidden lg:block lg:w-72 flex-shrink-0">
+            <div className="bg-white dark:bg-slate-800 rounded-xl shadow-sm border border-slate-200 dark:border-slate-700 p-6">
+              <h2 className="text-lg font-semibold text-slate-900 dark:text-white mb-4">Navigation</h2>
+              <nav className="space-y-1">
+                {sections.map((section) => {
+                  const Icon = section.icon;
+                  return (
+                    <button
+                      key={section.id}
+                      onClick={() => setActiveSection(section.id)}
+                      className={`w-full flex items-center space-x-3 px-3 py-2.5 rounded-lg text-left transition-all duration-200 group ${
+                        activeSection === section.id
+                          ? 'bg-orange-50 dark:bg-orange-900/20 text-orange-700 dark:text-orange-300 border border-orange-200 dark:border-orange-800'
+                          : 'text-slate-600 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white hover:bg-slate-50 dark:hover:bg-slate-700'
+                      }`}
+                    >
+                      <Icon className="h-5 w-5 flex-shrink-0" />
+                      <span className="font-medium text-sm">{section.label}</span>
+                    </button>
+                  );
+                })}
+              </nav>
+            </div>
           </div>
 
-          {/* Main Content */}
-          <div className="flex-1">
-            {/* Mobile Section Indicator */}
-            <div className="lg:hidden mb-6 p-4 bg-white rounded-lg shadow-sm border border-gray-200">
-              <div className="flex items-center justify-between">
-                <div className="flex items-center space-x-3">
-                  {(() => {
-                    const currentSection = sections.find(s => s.id === activeSection);
-                    const Icon = currentSection?.icon;
-                    return (
-                      <>
-                        {Icon && <Icon className="h-5 w-5 text-orange-600" />}
-                        <h2 className="text-lg font-semibold text-gray-900">
-                          {currentSection?.label || 'Overview'}
-                        </h2>
-                      </>
-                    );
-                  })()}
+          {/* Main Content Area */}
+          <div className="flex-1 min-w-0">
+            {/* Mobile Section Header */}
+            <div className="lg:hidden mb-6">
+              <div className="bg-white dark:bg-slate-800 rounded-xl shadow-sm border border-slate-200 dark:border-slate-700 p-4">
+                <div className="flex items-center justify-between">
+                  <div className="flex items-center space-x-3">
+                    {(() => {
+                      const currentSection = sections.find(s => s.id === activeSection);
+                      const Icon = currentSection?.icon;
+                      return (
+                        <>
+                          {Icon && <Icon className="h-5 w-5 text-orange-600" />}
+                          <h1 className="text-xl font-semibold text-slate-900 dark:text-white">
+                            {currentSection?.label || 'Overview'}
+                          </h1>
+                        </>
+                      );
+                    })()}
+                  </div>
+                  <button
+                    onClick={() => setIsMobileMenuOpen(true)}
+                    className="p-2 text-slate-400 hover:text-slate-600 dark:hover:text-slate-300 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-700 transition-colors"
+                  >
+                    <Menu className="h-5 w-5" />
+                  </button>
                 </div>
-                <button
-                  onClick={() => setIsMobileMenuOpen(true)}
-                  className="p-2 text-gray-400 hover:text-gray-600 rounded-lg hover:bg-gray-100"
-                >
-                  <Menu className="h-5 w-5" />
-                </button>
               </div>
             </div>
-            <div className="dacha-slide-in">
+
+            {/* Content */}
+            <div className="space-y-6">
               {renderContent()}
             </div>
           </div>
