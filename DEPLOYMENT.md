@@ -65,3 +65,6 @@ To update the dashboard:
 1. Push changes to the repository
 2. Railway will automatically redeploy
 3. No manual intervention required
+
+
+

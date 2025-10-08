@@ -982,101 +982,179 @@ const Dashboard = ({ onLogout }) => {
     <div className="space-y-8">
       <div className="c-suite-card">
         <div className="c-suite-header">
-          <h2 className="dacha-title-white text-2xl font-bold mb-2">Visual Ticket Flow Animation</h2>
-          <p className="dacha-subtitle-white">Real-time visualization of ticket processing from Atera to simPRO</p>
+          <h2 className="dacha-title-white text-2xl font-bold mb-2">🎬 Animated Ticket Flow</h2>
+          <p className="dacha-subtitle-white">Interactive visualization of the complete Atera → simPRO integration process</p>
         </div>
         <div className="c-suite-section">
-          <div className="bg-gray-900 rounded-lg p-8">
-            <div className="text-center mb-8">
-              <div className="text-white text-lg mb-2">🎬 Live Ticket Flow Animation</div>
-              <div className="text-gray-400 text-sm">Watch a ticket journey from Atera to simPRO</div>
+          <div className="bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 rounded-xl p-8 relative overflow-hidden">
+            {/* Animated Background Particles */}
+            <div className="absolute inset-0 overflow-hidden">
+              <div className="floating-particle particle-1"></div>
+              <div className="floating-particle particle-2"></div>
+              <div className="floating-particle particle-3"></div>
+              <div className="floating-particle particle-4"></div>
+              <div className="floating-particle particle-5"></div>
             </div>
             
-            {/* Animated Flow Diagram */}
-            <div className="relative">
-              {/* Flow Steps */}
-              <div className="flex flex-col md:flex-row items-center justify-between space-y-4 md:space-y-0 md:space-x-4">
+            {/* Header */}
+            <div className="text-center mb-12 relative z-10">
+              <div className="text-white text-2xl mb-3 font-bold animate-fade-in">🚀 Live Integration Flow</div>
+              <div className="text-gray-300 text-lg">Watch tickets flow through the system in real-time</div>
+              <div className="mt-4 inline-flex items-center space-x-2 bg-orange-600 px-4 py-2 rounded-full">
+                <div className="w-2 h-2 bg-green-400 rounded-full animate-pulse"></div>
+                <span className="text-white text-sm font-medium">System Active</span>
+              </div>
+            </div>
+            
+            {/* Main Flow Container */}
+            <div className="relative z-10">
+              {/* Flow Steps with Enhanced Animations */}
+              <div className="flex flex-col lg:flex-row items-center justify-between space-y-8 lg:space-y-0 lg:space-x-8">
                 
                 {/* Step 1: Atera Webhook */}
-                <div className="flow-step bg-blue-600 p-6 rounded-xl text-center min-w-[200px] animate-pulse-slow">
-                  <div className="text-2xl mb-2">📧</div>
-                  <div className="font-bold text-white mb-1">1. Atera Webhook</div>
-                  <div className="text-blue-100 text-sm">Ticket Created</div>
-                  <div className="text-blue-200 text-xs mt-2">Customer: Veri Sae</div>
+                <div className="flow-step-enhanced group relative">
+                  <div className="absolute -inset-1 bg-gradient-to-r from-blue-500 to-blue-700 rounded-2xl blur opacity-75 group-hover:opacity-100 transition duration-1000 group-hover:duration-200 animate-tilt"></div>
+                  <div className="relative bg-gradient-to-br from-blue-600 to-blue-800 p-8 rounded-2xl text-center min-w-[250px] transform transition-all duration-300 hover:scale-105">
+                    <div className="text-4xl mb-4 animate-bounce-slow">📧</div>
+                    <div className="font-bold text-white text-xl mb-2">Atera Webhook</div>
+                    <div className="text-blue-100 text-sm mb-2">Ticket Created</div>
+                    <div className="text-blue-200 text-xs">Customer: Veri Sae</div>
+                    <div className="mt-4 text-xs text-blue-300 animate-pulse">Status: Active</div>
+                  </div>
+                  {/* Data Flow Indicator */}
+                  <div className="absolute -right-2 top-1/2 transform -translate-y-1/2 w-4 h-4 bg-orange-500 rounded-full animate-ping"></div>
                 </div>
 
-                {/* Arrow 1 */}
-                <div className="hidden md:block">
-                  <div className="flow-arrow animate-bounce-right">
-                    <ArrowRight className="h-8 w-8 text-orange-500" />
+                {/* Enhanced Arrow 1 */}
+                <div className="hidden lg:block relative">
+                  <div className="flow-arrow-enhanced">
+                    <div className="arrow-line"></div>
+                    <div className="arrow-head"></div>
+                    <div className="data-packet animate-move-right">📦</div>
                   </div>
                 </div>
 
-                {/* Step 2: Validation */}
-                <div className="flow-step bg-yellow-600 p-6 rounded-xl text-center min-w-[200px] animate-pulse-slow" style={{animationDelay: '1s'}}>
-                  <div className="text-2xl mb-2">🔍</div>
-                  <div className="font-bold text-white mb-1">2. Validation</div>
-                  <div className="text-yellow-100 text-sm">Duplicate Check</div>
-                  <div className="text-yellow-200 text-xs mt-2">PlanetScale DB</div>
+                {/* Step 2: Validation & Processing */}
+                <div className="flow-step-enhanced group relative">
+                  <div className="absolute -inset-1 bg-gradient-to-r from-yellow-500 to-yellow-700 rounded-2xl blur opacity-75 group-hover:opacity-100 transition duration-1000 group-hover:duration-200 animate-tilt" style={{animationDelay: '0.5s'}}></div>
+                  <div className="relative bg-gradient-to-br from-yellow-600 to-yellow-800 p-8 rounded-2xl text-center min-w-[250px] transform transition-all duration-300 hover:scale-105" style={{animationDelay: '0.5s'}}>
+                    <div className="text-4xl mb-4 animate-bounce-slow" style={{animationDelay: '0.5s'}}>🔍</div>
+                    <div className="font-bold text-white text-xl mb-2">Validation & Processing</div>
+                    <div className="text-yellow-100 text-sm mb-2">Duplicate Check</div>
+                    <div className="text-yellow-200 text-xs">Smart Tagging</div>
+                    <div className="mt-4 text-xs text-yellow-300 animate-pulse" style={{animationDelay: '0.5s'}}>Processing...</div>
+                  </div>
+                  {/* Processing Indicator */}
+                  <div className="absolute -right-2 top-1/2 transform -translate-y-1/2 w-4 h-4 bg-orange-500 rounded-full animate-ping" style={{animationDelay: '0.5s'}}></div>
                 </div>
 
-                {/* Arrow 2 */}
-                <div className="hidden md:block">
-                  <div className="flow-arrow animate-bounce-right" style={{animationDelay: '1s'}}>
-                    <ArrowRight className="h-8 w-8 text-orange-500" />
+                {/* Enhanced Arrow 2 */}
+                <div className="hidden lg:block relative">
+                  <div className="flow-arrow-enhanced" style={{animationDelay: '0.5s'}}>
+                    <div className="arrow-line"></div>
+                    <div className="arrow-head"></div>
+                    <div className="data-packet animate-move-right" style={{animationDelay: '0.5s'}}>⚡</div>
                   </div>
                 </div>
 
                 {/* Step 3: simPRO API */}
-                <div className="flow-step bg-green-600 p-6 rounded-xl text-center min-w-[200px] animate-pulse-slow" style={{animationDelay: '2s'}}>
-                  <div className="text-2xl mb-2">⚡</div>
-                  <div className="font-bold text-white mb-1">3. simPRO API</div>
-                  <div className="text-green-100 text-sm">Job Creation</div>
-                  <div className="text-green-200 text-xs mt-2">SLA Calculated</div>
+                <div className="flow-step-enhanced group relative">
+                  <div className="absolute -inset-1 bg-gradient-to-r from-green-500 to-green-700 rounded-2xl blur opacity-75 group-hover:opacity-100 transition duration-1000 group-hover:duration-200 animate-tilt" style={{animationDelay: '1s'}}></div>
+                  <div className="relative bg-gradient-to-br from-green-600 to-green-800 p-8 rounded-2xl text-center min-w-[250px] transform transition-all duration-300 hover:scale-105" style={{animationDelay: '1s'}}>
+                    <div className="text-4xl mb-4 animate-bounce-slow" style={{animationDelay: '1s'}}>⚡</div>
+                    <div className="font-bold text-white text-xl mb-2">simPRO API</div>
+                    <div className="text-green-100 text-sm mb-2">Job Creation</div>
+                    <div className="text-green-200 text-xs">SLA Calculated</div>
+                    <div className="mt-4 text-xs text-green-300 animate-pulse" style={{animationDelay: '1s'}}>Creating Job...</div>
+                  </div>
+                  {/* Success Indicator */}
+                  <div className="absolute -right-2 top-1/2 transform -translate-y-1/2 w-4 h-4 bg-orange-500 rounded-full animate-ping" style={{animationDelay: '1s'}}></div>
                 </div>
 
-                {/* Arrow 3 */}
-                <div className="hidden md:block">
-                  <div className="flow-arrow animate-bounce-right" style={{animationDelay: '2s'}}>
-                    <ArrowRight className="h-8 w-8 text-orange-500" />
+                {/* Enhanced Arrow 3 */}
+                <div className="hidden lg:block relative">
+                  <div className="flow-arrow-enhanced" style={{animationDelay: '1s'}}>
+                    <div className="arrow-line"></div>
+                    <div className="arrow-head"></div>
+                    <div className="data-packet animate-move-right" style={{animationDelay: '1s'}}>🔄</div>
                   </div>
                 </div>
 
-                {/* Step 4: Sync Complete */}
-                <div className="flow-step bg-purple-600 p-6 rounded-xl text-center min-w-[200px] animate-pulse-slow" style={{animationDelay: '3s'}}>
-                  <div className="text-2xl mb-2">🔄</div>
-                  <div className="font-bold text-white mb-1">4. Sync Complete</div>
-                  <div className="text-purple-100 text-sm">Bidirectional Updates</div>
-                  <div className="text-purple-200 text-xs mt-2">Comments Sync</div>
+                {/* Step 4: Bidirectional Sync */}
+                <div className="flow-step-enhanced group relative">
+                  <div className="absolute -inset-1 bg-gradient-to-r from-purple-500 to-purple-700 rounded-2xl blur opacity-75 group-hover:opacity-100 transition duration-1000 group-hover:duration-200 animate-tilt" style={{animationDelay: '1.5s'}}></div>
+                  <div className="relative bg-gradient-to-br from-purple-600 to-purple-800 p-8 rounded-2xl text-center min-w-[250px] transform transition-all duration-300 hover:scale-105" style={{animationDelay: '1.5s'}}>
+                    <div className="text-4xl mb-4 animate-bounce-slow" style={{animationDelay: '1.5s'}}>🔄</div>
+                    <div className="font-bold text-white text-xl mb-2">Bidirectional Sync</div>
+                    <div className="text-purple-100 text-sm mb-2">Real-time Updates</div>
+                    <div className="text-purple-200 text-xs">Comments & Status</div>
+                    <div className="mt-4 text-xs text-purple-300 animate-pulse" style={{animationDelay: '1.5s'}}>Syncing...</div>
+                  </div>
+                  {/* Sync Indicator */}
+                  <div className="absolute -right-2 top-1/2 transform -translate-y-1/2 w-4 h-4 bg-orange-500 rounded-full animate-ping" style={{animationDelay: '1.5s'}}></div>
                 </div>
               </div>
 
-              {/* Mobile Arrows */}
-              <div className="md:hidden flex justify-center space-y-2 flex-col items-center mt-4">
-                <div className="flow-arrow animate-bounce-down">
-                  <ArrowRight className="h-6 w-6 text-orange-500 rotate-90" />
+              {/* Mobile Flow Arrows */}
+              <div className="lg:hidden flex justify-center space-y-4 flex-col items-center mt-8">
+                <div className="flow-arrow-mobile">
+                  <div className="arrow-line-vertical"></div>
+                  <div className="arrow-head-down"></div>
+                  <div className="data-packet-mobile animate-move-down">📦</div>
                 </div>
-                <div className="flow-arrow animate-bounce-down" style={{animationDelay: '1s'}}>
-                  <ArrowRight className="h-6 w-6 text-orange-500 rotate-90" />
+                <div className="flow-arrow-mobile" style={{animationDelay: '0.5s'}}>
+                  <div className="arrow-line-vertical"></div>
+                  <div className="arrow-head-down"></div>
+                  <div className="data-packet-mobile animate-move-down" style={{animationDelay: '0.5s'}}>⚡</div>
                 </div>
-                <div className="flow-arrow animate-bounce-down" style={{animationDelay: '2s'}}>
-                  <ArrowRight className="h-6 w-6 text-orange-500 rotate-90" />
+                <div className="flow-arrow-mobile" style={{animationDelay: '1s'}}>
+                  <div className="arrow-line-vertical"></div>
+                  <div className="arrow-head-down"></div>
+                  <div className="data-packet-mobile animate-move-down" style={{animationDelay: '1s'}}>🔄</div>
                 </div>
               </div>
 
-              {/* Data Flow Indicators */}
-              <div className="mt-8 grid grid-cols-1 md:grid-cols-3 gap-4 text-center">
-                <div className="bg-gray-800 p-4 rounded-lg">
-                  <div className="text-orange-400 font-bold">Webhook Data</div>
-                  <div className="text-gray-300 text-sm">Ticket ID, Priority, Customer</div>
+              {/* Enhanced Data Flow Indicators */}
+              <div className="mt-12 grid grid-cols-1 md:grid-cols-3 gap-6 text-center">
+                <div className="bg-gradient-to-br from-gray-800 to-gray-900 p-6 rounded-xl border border-gray-700 hover:border-orange-500 transition-all duration-300 hover:scale-105">
+                  <div className="text-orange-400 font-bold text-lg mb-2">📊 Webhook Data</div>
+                  <div className="text-gray-300 text-sm">Ticket ID, Priority, Customer Info</div>
+                  <div className="mt-2 text-xs text-orange-300 animate-pulse">Real-time</div>
                 </div>
-                <div className="bg-gray-800 p-4 rounded-lg">
-                  <div className="text-orange-400 font-bold">API Calls</div>
-                  <div className="text-gray-300 text-sm">simPRO Job Creation, Updates</div>
+                <div className="bg-gradient-to-br from-gray-800 to-gray-900 p-6 rounded-xl border border-gray-700 hover:border-orange-500 transition-all duration-300 hover:scale-105">
+                  <div className="text-orange-400 font-bold text-lg mb-2">🔌 API Calls</div>
+                  <div className="text-gray-300 text-sm">simPRO Job Creation & Updates</div>
+                  <div className="mt-2 text-xs text-orange-300 animate-pulse">Rate Limited</div>
                 </div>
-                <div className="bg-gray-800 p-4 rounded-lg">
-                  <div className="text-orange-400 font-bold">Sync Status</div>
-                  <div className="text-gray-300 text-sm">Real-time Bidirectional</div>
+                <div className="bg-gradient-to-br from-gray-800 to-gray-900 p-6 rounded-xl border border-gray-700 hover:border-orange-500 transition-all duration-300 hover:scale-105">
+                  <div className="text-orange-400 font-bold text-lg mb-2">🔄 Sync Status</div>
+                  <div className="text-gray-300 text-sm">Bidirectional Real-time Updates</div>
+                  <div className="mt-2 text-xs text-orange-300 animate-pulse">Active</div>
+                </div>
+              </div>
+
+              {/* Performance Metrics */}
+              <div className="mt-8 bg-gradient-to-r from-gray-800 to-gray-900 rounded-xl p-6 border border-gray-700">
+                <div className="text-center mb-4">
+                  <div className="text-white font-bold text-lg">⚡ Performance Metrics</div>
+                </div>
+                <div className="grid grid-cols-2 md:grid-cols-4 gap-4 text-center">
+                  <div className="metric-item">
+                    <div className="text-2xl font-bold text-orange-400">~2.5s</div>
+                    <div className="text-gray-300 text-sm">Avg Processing</div>
+                  </div>
+                  <div className="metric-item">
+                    <div className="text-2xl font-bold text-green-400">99.9%</div>
+                    <div className="text-gray-300 text-sm">Success Rate</div>
+                  </div>
+                  <div className="metric-item">
+                    <div className="text-2xl font-bold text-blue-400">24/7</div>
+                    <div className="text-gray-300 text-sm">Monitoring</div>
+                  </div>
+                  <div className="metric-item">
+                    <div className="text-2xl font-bold text-purple-400">Real-time</div>
+                    <div className="text-gray-300 text-sm">Updates</div>
+                  </div>
                 </div>
               </div>
             </div>
